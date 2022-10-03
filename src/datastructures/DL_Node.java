@@ -9,13 +9,13 @@ package datastructures;
  *
  * @author rayan
  */
-public class DL_Node<E>
+public class DL_Node<T>
 {
-    protected E data;
-    protected DL_Node<E> next;
-    protected DL_Node<E> prev;
+    protected T data;
+    protected DL_Node<T> next;
+    protected DL_Node<T> prev;
     
-    public DL_Node(E d, DL_Node<E> nextNode, DL_Node<E> prevNode)
+    public DL_Node(T d, DL_Node<T> nextNode, DL_Node<T> prevNode)
     {
         this.data = d;
         this.next = nextNode;
@@ -28,37 +28,37 @@ public class DL_Node<E>
             prev.next = this;
     }
 
-    public E getData()
+    public T getData()
     {
         return data;
     }
 
-    public void setData(E data)
+    public void setData(T data)
     {
         this.data = data;
     }
 
-    public DL_Node<E> getNext()
+    public DL_Node<T> getNext()
     {
         return next;
     }
 
-    public void setNext(DL_Node<E> next)
+    public void setNext(DL_Node<T> next)
     {
         this.next = next;
     }
 
-    public DL_Node<E> getPrev()
+    public DL_Node<T> getPrev()
     {
         return prev;
     }
 
-    public void setPrev(DL_Node<E> prev)
+    public void setPrev(DL_Node<T> prev)
     {
         this.prev = prev;
     }
     
-    public DL_Node(E d)
+    public DL_Node(T d)
     {
         this(d, null, null);
     }

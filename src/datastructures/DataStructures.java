@@ -496,7 +496,7 @@ public class DataStructures
             BST tree = new BST(input);
             do
             {
-                choice = validateInput("\nPlease enter the corresponding command for what you want to do with the binary tree: \n\n\t0 - insert\n\t1 - output preOrder\n\t2 - output inOrder\n\t3 - output postOrder\n\t4 - prettyPrint\n\t5 - BFS\n\t6 - exit to main menu");
+                choice = validateInput("\nPlease enter the corresponding command for what you want to do with the binary tree: \n\n\t0 - insert\n\t1 - output preOrder\n\t2 - output inOrder\n\t3 - output postOrder\n\t4 - prettyPrint\n\t5 - BFS\n\t6 - exit to main menu\n\t7 - remove\n\t8 - height\n\t9 - size\n\t10 - pretty print");
                 switch(choice)
                 {
                     case 0:
@@ -519,9 +519,27 @@ public class DataStructures
                     case 4:
                         System.out.println("\n");
                         tree.prettyPrint(tree.getRoot(), 0);
+                        break;
                     case 5:
                         System.out.println("\n");
                         tree.printBFS();
+                        break;
+                    case 7:
+                        System.out.println("\n");
+                        System.out.println("Please input the value you want to add to the binary tree: ");
+                        input = scanner.nextLine();
+                        tree.delete(tree.getRoot(), input);
+                        break;
+                    case 8:
+                        System.out.println("\n Height = " + tree.height(tree.getRoot()));
+                        break;
+                    case 9:
+                        System.out.println("\n Size = " + tree.size(tree.getRoot()));
+                        break;
+                    case 10:
+                        System.out.println("\n");
+                        tree.prettyPrint(tree.getRoot(), 0);
+                        break;
                 }
                 if(choice == 6)
                     break;
