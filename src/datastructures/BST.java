@@ -137,7 +137,8 @@ public class BST<T extends Comparable<T>>
     public DL_Node search(DL_Node temp, T data)
     {
         if(temp.getData() == data)
-            
+            return temp;
+        return temp;
     }
     
     private T minValue(DL_Node temp)
@@ -188,11 +189,17 @@ public class BST<T extends Comparable<T>>
         
         prettyPrint(node.getNext(), level+1);
         
+//        int max_len = 0;
+//        if(node.getData().toString().length() > max_len)
+//        {
+//            max_len = node.getData().toString().length();
+//        }
+        
         if(level != 0)
         {
             for(int i=0; i < level - 1; i++)
                 System.out.print("|\t");
-            System.out.println("|-------"+node.getData());
+            System.out.println("|-------" + node.getData());
         }
         else
             System.out.println(node.getData());
